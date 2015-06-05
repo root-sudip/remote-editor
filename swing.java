@@ -1,6 +1,6 @@
 import javax.swing.*;  
 public class swing {  
-public static void mainrr(String[] args) {  
+public static void main(String[] args) {  
 JFrame f=new JFrame();//creating instance of JFrame  
           
 JButton b=new JButton("click");//creating instance of JButton  
