@@ -1,10 +1,13 @@
 //remote-code-editor
 //Developed by Cloudroom
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.KeyListener;
+import javax.swing.event.*;
+import javax.swing.text.*;
 
 public class swing{
   public static void main(String[] args) {
@@ -27,12 +30,18 @@ public class swing{
         Font font=new Font("Verdana",Font.PLAIN, 16);
        
         /*JPanel panel=new JPanel();*/
+        JScrollPane jsp = new JScrollPane();
+
+        
         
         final JTextArea textarea=new JTextArea(30,100);
-        final JTextArea lines=new JTextArea("1");
+        final JTextArea lines=new JTextArea("  1");
+/////////////////////////
         
 
-       
+        
+
+/////////////////////////       
 
 
         ActionListener anaction=new ActionListener(){
@@ -83,6 +92,42 @@ public class swing{
       }*/
     };
 
+
+
+    /////////////////////////////////////////////////
+
+      textarea.getDocument().addDocumentListener(new DocumentListener(){
+      public String getText(){
+        int caretPosition = textarea.getDocument().getLength();
+        Element root = textarea.getDocument().getDefaultRootElement();
+        String text = " 1" + System.getProperty("line.separator");
+        for(int i = 2; i < root.getElementIndex( caretPosition ) + 2; i++){
+          text += i + System.getProperty("line.separator");
+        }
+        return text;
+      }
+      @Override
+      public void changedUpdate(DocumentEvent de) {
+        lines.setText(getText());
+      }
+ 
+      @Override
+      public void insertUpdate(DocumentEvent de) {
+        lines.setText(getText());
+      }
+ 
+      @Override
+      public void removeUpdate(DocumentEvent de) {
+        lines.setText(getText());
+      }
+ 
+    });
+
+
+
+
+    ////////////////////////////
+
 ////////////////////////////////////////////////////////////
 ///font
 
@@ -95,8 +140,8 @@ public class swing{
 
 ///frame
 
-     frame.setLayout(null);
-     frame2.setLayout(null);
+     /*frame.setLayout(null);*/
+     /*frame2.setLayout(null);*/
 
 
      frame.setSize(900,600);
@@ -129,12 +174,22 @@ public class swing{
        
         
 ///textarea  
-     textarea.setBounds(30,0,900,600); 
+     /*textarea.setBounds(30,0,900,600); */
      textarea.setFont(font);
-     /*lines.setEditable(false);*/
-     lines.setBounds(0,0,30,900);
+     lines.setEditable(false);
+     /*lines.setBounds(0,0,60,900);*/ 
+     /*lines.setLocation(0,0);*/
+     /*lines.setSize(60,900);*/
      lines.setFont(font);
      lines.setBackground(Color.LIGHT_GRAY);
+
+
+/// scroll bar
+    jsp.getViewport().add(textarea);
+    jsp.setRowHeaderView(lines);
+    jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+ 
+    frame.add(jsp);
        
         
 ///menubar       
