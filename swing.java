@@ -26,9 +26,8 @@ public class swing{
         /*JPanel panel=new JPanel();*/
         
         final JTextArea textarea=new JTextArea(30,100);
-        JScrollPane scrollPane = new JScrollPane(textarea); 
-        JScrollBar bar = new JScrollBar();
-
+        final JTextArea lines=new JTextArea("1");
+        
 
        
 
@@ -126,9 +125,9 @@ public class swing{
        
         
 ///textarea  
-     textarea.setBounds(0,0,900,600); 
+     textarea.setBounds(30,0,900,600); 
      textarea.setFont(font);
-     
+     lines.setEditable(false);
        
         
 ///menubar       
