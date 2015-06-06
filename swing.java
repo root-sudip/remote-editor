@@ -105,6 +105,7 @@ public class swing{
 
 
      frame.add(textarea);
+     frame.add(lines);
 
      
      
@@ -127,7 +128,10 @@ public class swing{
 ///textarea  
      textarea.setBounds(30,0,900,600); 
      textarea.setFont(font);
-     lines.setEditable(false);
+     /*lines.setEditable(false);*/
+     lines.setBounds(0,0,30,900);
+     lines.setFont(font);
+     lines.setBackground(Color.LIGHT_GRAY);
        
         
 ///menubar       
