@@ -26,8 +26,9 @@ public class swing{
         /*JPanel panel=new JPanel();*/
         
         final JTextArea textarea=new JTextArea(30,100);
-        
-        
+        JScrollPane scrollPane = new JScrollPane(textarea); 
+        JScrollBar bar = new JScrollBar();
+
 
        
 
@@ -96,7 +97,7 @@ public class swing{
      frame2.setLayout(null);
 
 
-     frame.setSize(400,300);
+     frame.setSize(900,600);
      frame2.setSize(400,300);
 
 
@@ -106,19 +107,18 @@ public class swing{
 
      frame.add(textarea);
 
-
-
      
      
 
 
      frame.setVisible(true);
      frame2.setVisible(false);
+     frame.setResizable(false);
 
 ///listener
 
      textarea.addKeyListener(keyListener); 
-
+     open.addActionListener(anaction);
       
         /*frame.add(label);*/
         /*label.setBounds(40,40,80,80);*/
@@ -126,10 +126,10 @@ public class swing{
        
         
 ///textarea  
-     textarea.setBounds(0,0,400,300); 
+     textarea.setBounds(0,0,900,600); 
      textarea.setFont(font);
      
-        
+       
         
 ///menubar       
         
@@ -141,7 +141,7 @@ public class swing{
         
         frame.setJMenuBar(menubar);
         frame2_button.addActionListener(twoaction);
-        open.addActionListener(anaction);
+        
 
       }
     };
