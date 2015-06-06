@@ -1,0 +1,126 @@
+JOptionPane.showMessageDialog(new JFrame(),"Clicked","Swing Msg Box",JOptionPane.ERROR_MESSAGE);
+////////////////////////////////////
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class swing{
+  public static void main(String[] args) {
+
+    
+    Runnable runner =new Runnable()
+    {
+      public void run(){
+
+        
+        
+        final JFrame frame=new JFrame("Swing");
+        JButton button=new JButton("CLick");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JMenuBar menubar= new JMenuBar();
+        JMenu menu=new JMenu("File");
+        JMenuItem open=new JMenuItem("open");
+        JMenuItem exit=new JMenuItem("eXIT");
+       
+        JPanel panel=new JPanel();
+        final JTextField textfield=new JTextField(20);
+        frame.add(panel);
+        panel.add(textfield);
+        
+
+        menubar.add(menu);
+
+
+        ActionListener anaction=new ActionListener(){
+
+          public void actionPerformed(ActionEvent ae){
+
+                  frame.getContentPane().setBackground(Color.red);
+                
+                  JOptionPane.showMessageDialog(new JFrame(),textfield.getText(),"Entered Name",JOptionPane.ERROR_MESSAGE);
+          }
+
+        };
+
+        
+        button.setBackground(Color.red);
+        menu.add(open);
+        frame.setJMenuBar(menubar);
+        frame.setLayout(null);
+        frame.add(button);
+
+        button.setBounds(150,150,20,20);
+        button.setSize(100,100);
+        open.addActionListener(anaction);
+        
+        frame.setVisible(true);
+        
+        frame.setSize(400,300);
+
+
+      }
+    };
+    runner.run();
+    
+  }
+}
+
+
+/////////////////////////////////////
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class swing 
+{
+        JFrame frame=new JFrame("Frame");
+       JPanel jp = new JPanel();
+       JLabel jl = new JLabel();
+       JTextField jt = new JTextField(30);
+       JButton jb = new JButton("Enter");
+
+       public swing()
+       {
+             
+              frame.setVisible(true);
+              frame.setSize(400, 200);
+              frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+              jp.add(jt);
+
+
+              jt.addActionListener(new ActionListener()
+              {
+                     public void actionPerformed(ActionEvent e)
+                     {
+                           String input = jt.getText();
+                           jl.setText(input); 
+                     }
+              });
+
+              jp.add(jb);
+              jb.addActionListener(new ActionListener()
+              {
+                      public void actionPerformed(ActionEvent e)
+                      {
+                             String input = jt.getText();
+                             jl.setText(input);
+                      }
+              });
+              
+              jp.add(jl);
+              frame.add(jp);
+
+       }
+
+       public static void main(String[] args)
+       {
+             new swing();
+       }
+}
