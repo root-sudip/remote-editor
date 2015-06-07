@@ -102,7 +102,7 @@ public class swing{
         Element root = textarea.getDocument().getDefaultRootElement();
         String text = " 1" + System.getProperty("line.separator");
         for(int i = 2; i < root.getElementIndex( caretPosition ) + 2; i++){
-          text += i + System.getProperty("line.separator");
+          text += i + System.getProperty("line.separator");;
         }
         return text;
       }
