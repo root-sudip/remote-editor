@@ -38,7 +38,7 @@ public class pane extends JFrame{
 				return text;
 			}
 			@Override
-			public void changedUpdate(DocumentEvent de) {
+			public void changedUpdate(DocumentEvent dee) {
 				lines.setText(getText());
 			}
  
@@ -53,6 +53,8 @@ public class pane extends JFrame{
 			}
  
 		});
+
+		
  
 		jsp.getViewport().add(jta);
 		jsp.setRowHeaderView(lines);
