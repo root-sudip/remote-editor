@@ -37,7 +37,7 @@ public class swing{
         final JTextArea textarea=new JTextArea(30,100);
         final JTextArea lines=new JTextArea("  1");
 
-        JPanel pane=new JPanel();
+        /*JPanel pane=new JPanel();*/
 /////////////////////////
         
 
@@ -139,14 +139,14 @@ public class swing{
 ////button
      /*button.setBounds(150,150,80,80);*/
      /*frame2_button.setBounds(150,150,80,80);*/
-     pane.add(frame2_button);
+     /*pane.add(frame2_button);
      frame2.add(pane);
-     frame2_button.setPreferredSize(new Dimension(40, 40));
+     frame2_button.btn.setPreferredSize(new Dimension(40, 40));*/
 
 ///frame
 
     /* frame.setLayout(null);*/
-     /*frame2.setLayout(null);*/
+     /*frame2.setLayout(new GridLayout(3, 2));*/
 
 
      frame.setSize(900,600);
@@ -154,9 +154,11 @@ public class swing{
 
 
      /*frame.add(button);*/
+     ///////////////////
      frame2.add(frame2_button);
-
-
+     frame2.setLayout(new GridLayout(4, 3));
+     frame2_button.setSize(40,40);
+    ///////////////////
      frame.add(textarea);
      frame.add(lines);
 
