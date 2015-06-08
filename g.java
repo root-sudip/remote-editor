@@ -19,9 +19,9 @@ public class g
         constraints.weighty     = 1.0;
         constraints.anchor      = GridBagConstraints.CENTER;
         constraints.fill        = GridBagConstraints.BOTH;
-        constraints.insets      = new Insets(0, 0, 0, 0);
+        /*constraints.insets      = new Insets(0, 0, 0, 0);
         constraints.ipadx       = 10;  
-        constraints.ipady       = 10;
+        constraints.ipady       = 10;*/
         gridBag.setConstraints(button, constraints);
         panel.add(button);
 
