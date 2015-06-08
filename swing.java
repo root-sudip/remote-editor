@@ -33,11 +33,11 @@ public class swing{
         JScrollPane jsp = new JScrollPane();
 
         
-        
         final JTextArea textarea=new JTextArea(30,100);
         final JTextArea lines=new JTextArea("  1");
 
-        /*JPanel pane=new JPanel();*/
+        
+
 /////////////////////////
         
 
@@ -129,6 +129,12 @@ public class swing{
 
 
     ////////////////////////////
+/*panel.add(frame2_button);
+frame2.add(panel);
+      */
+
+      
+      
 
 ////////////////////////////////////////////////////////////
 ///font
@@ -155,9 +161,9 @@ public class swing{
 
      /*frame.add(button);*/
      ///////////////////
-     frame2.add(frame2_button);
+     /*frame2.add(frame2_button);
      frame2.setLayout(new GridLayout(4, 3));
-     frame2_button.setSize(40,40);
+     frame2_button.setSize(40,40);*/
     ///////////////////
      frame.add(textarea);
      frame.add(lines);
@@ -195,7 +201,7 @@ public class swing{
     jsp.getViewport().add(textarea);
     jsp.setRowHeaderView(lines);
     jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
- 
+
     frame.add(jsp);
        
         
