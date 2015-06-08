@@ -141,7 +141,7 @@ public class swing{
      /*frame2_button.setBounds(150,150,80,80);*/
      pane.add(frame2_button);
      frame2.add(pane);
-     frame2_button.btn.setPreferredSize(new Dimension(40, 40));
+     frame2_button.setPreferredSize(new Dimension(40, 40));
 
 ///frame
 
