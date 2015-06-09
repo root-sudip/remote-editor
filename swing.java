@@ -221,5 +221,5 @@ frame2.add(panel);
     };
     runner.run();
 
-  }
+  }{}
 }
