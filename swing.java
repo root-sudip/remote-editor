@@ -9,6 +9,8 @@ import java.awt.event.KeyListener;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
+
+
 public class swing{
   public static void main(String[] args) {
     Runnable runner =new Runnable()
@@ -98,7 +100,7 @@ public class swing{
 
     /////////////////////////////////////////////////
 
-      textarea.getDocument().addDocumentListener(new DocumentListener(){
+      textarea.addDocumentListener(new DocumentListener(){
       public String getText(){
         int caretPosition = textarea.getDocument().getLength();
         Element root = textarea.getDocument().getDefaultRootElement();
