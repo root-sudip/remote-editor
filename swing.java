@@ -101,7 +101,7 @@ public class swing{
     /////////////////////////////////////////////////
 
       textarea.getDocument().addDocumentListener(new DocumentListener(){
-      public String getText(){
+      public String etText(){
         int caretPosition = textarea.getDocument().getLength();
         Element root = textarea.getDocument().getDefaultRootElement();
         String text = " 1" + System.getProperty("line.separator");
@@ -112,17 +112,17 @@ public class swing{
       }
       @Override
       public void changedUpdate(DocumentEvent de) {
-        lines.setText(getText());
+        lines.setText(etText());
       }
  
       @Override
       public void insertUpdate(DocumentEvent de) {
-        lines.setText(getText());
+        lines.setText(etText());
       }
  
       @Override
       public void removeUpdate(DocumentEvent de) {
-        lines.setText(getText());
+        lines.setText(etText());
       }
  
     });
