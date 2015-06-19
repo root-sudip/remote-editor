@@ -27,24 +27,26 @@ Font sfont =new Font("Verdana",Font.PLAIN,16);
 DocumentListener gdocment = new DocumentListener(){
 
     public void changedUpdate(DocumentEvent de){
-        System.out.println("Chnaged");
+        System.out.println(ANSI_RED+"Chnaged"+ ANSI_RESET);
     }
 
     public void insertUpdate(DocumentEvent de){
-        System.out.println("inserted");
+        System.out.println(ANSI_RED+"inserted"+ANSI_RESET);
     }
 
     public void removeUpdate(DocumentEvent de){
-        System.out.println("Removed");
+        System.out.println(ANSI_RED+"Removed"+ANSI_RESET);
     }
 
 };
-
-    textArea.setLineWrap(true);
+    
+    textArea.getDocument().addDocumentListener(gdocment);
+    textArea.setLineWrap(false);
     textArea.setEditable(true);
     textArea.setVisible(true);
     lines.setEditable(true);
     textArea.setFont(sfont);
+    lines.setFont(sfont);
 
     JScrollPane scroll = new JScrollPane (textArea);
     scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
