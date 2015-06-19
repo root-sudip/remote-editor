@@ -31,7 +31,7 @@ DocumentListener gdocment = new DocumentListener(){
     }
 
     public void insertUpdate(DocumentEvent de){
-        System.out.println("inserted")
+        System.out.println("inserted");
     }
 
     public void removeUpdate(DocumentEvent de){
