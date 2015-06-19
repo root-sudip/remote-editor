@@ -210,7 +210,7 @@ frame2.add(panel);
 ///menubar       
         
         /*button.setBackground(Color.red);*/
-        menubar.add(menu)
+        menubar.add(menu);
         menu.add(open);
         menu.add(save);
         menu.add(exit);
