@@ -24,7 +24,10 @@ textArea.setSize(400,400);
 JTextArea lines = new JTextArea(" 1"); 
 Font sfont = new Font("Verdana",Font.PLAIN,16);
 JMenuBar menubar = new JMenuBar();
-/*JMenu */
+JMenu file = new JMenu("File");
+JMenuItem open = new JMenuItem("OPen");
+JMenuItem save = new JMenuItem("Save");
+JMenuItem exit = new JMenuItem("Exit");
 
 DocumentListener gdocment = new DocumentListener(){
 
@@ -46,7 +49,7 @@ DocumentListener gdocment = new DocumentListener(){
 KeyListener klistener = new KeyListener(){
     public void keyPressed(KeyEvent ke){}
     public void keyTyped(KeyEvent ke){
-        System.out.println(ke.getKeyChar());
+        System.out.println("\033[32;1m"+ke.getKeyChar()+"\033[0m");
     }
     public void keyReleased(KeyEvent ke){}
 
