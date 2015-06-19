@@ -22,11 +22,29 @@ frame.setResizable(false);
 JTextArea textArea = new JTextArea();
 textArea.setSize(400,400);   
 JTextArea lines =new JTextArea(" 1"); 
+Font sfont =new Font("Verdana",Font.PLAIN,16);
+
+DocumentListener gdocment = new DocumentListener(){
+
+    public void changedUpdate(DocumentEvent de){
+
+    }
+
+    public void insertUpdate(DocumentEvent de){
+
+    }
+
+    public void removeUpdate(DocumentEvent de){
+
+    }
+
+};
 
     textArea.setLineWrap(true);
     textArea.setEditable(true);
     textArea.setVisible(true);
     lines.setEditable(true);
+    textArea.setFont(sfont);
 
     JScrollPane scroll = new JScrollPane (textArea);
     scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
