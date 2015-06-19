@@ -6,6 +6,8 @@ import javax.swing.event.*;
 import javax.swing.text.*;
 import javax.swing.JPanel.*;
 import javax.swing.JScrollPane;
+import java.util.*;
+import java.io.*;
 
 public class k{
   public static void main(String[] args) {
@@ -50,7 +52,9 @@ DocumentListener gdocment = new DocumentListener(){
 KeyListener klistener = new KeyListener(){
     public void keyPressed(KeyEvent ke){}
     public void keyTyped(KeyEvent ke){
-        if(ke.getKeyChar()==" "){
+        char k = ke.getKeyChar();
+        
+        if(k==' '){
         System.out.println("\033[33;1mit was space\033[0m");
     }
     else{
