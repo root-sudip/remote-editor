@@ -21,21 +21,23 @@ frame.setResizable(false);
 //TEXT AREA
 JTextArea textArea = new JTextArea();
 textArea.setSize(400,400);   
-JTextArea lines =new JTextArea(" 1"); 
-Font sfont =new Font("Verdana",Font.PLAIN,16);
+JTextArea lines = new JTextArea(" 1"); 
+Font sfont = new Font("Verdana",Font.PLAIN,16);
+JMenuBar menubar = new JMenuBar();
+/*JMenu */
 
 DocumentListener gdocment = new DocumentListener(){
 
     public void changedUpdate(DocumentEvent de){
-        System.out.println("Chnaged");
+        System.out.println("\033[31;1m Chnaged\033[0m");
     }
 
     public void insertUpdate(DocumentEvent de){
-        System.out.println("inserted");
+        System.out.println("\033[31;1m inserted\033[0m");
     }
 
     public void removeUpdate(DocumentEvent de){
-        System.out.println("Removed");
+        System.out.println("\033[31;1m Removed\033[0m");
     }
 
 };
