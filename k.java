@@ -26,7 +26,7 @@ JScrollPane scroll = new JScrollPane (textArea);
 Font sfont = new Font("Verdana",Font.PLAIN,16);
 JMenuBar menubar = new JMenuBar();
 JMenu file = new JMenu("File");
-JMenuItem open = new JMenuItem("OPen");
+JMenuItem open = new JMenuItem("Open");
 JMenuItem save = new JMenuItem("Save");
 JMenuItem exit = new JMenuItem("Exit");
 
