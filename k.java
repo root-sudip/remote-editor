@@ -27,15 +27,15 @@ Font sfont =new Font("Verdana",Font.PLAIN,16);
 DocumentListener gdocment = new DocumentListener(){
 
     public void changedUpdate(DocumentEvent de){
-        System.out.println(ANSI_RED+"Chnaged"+ ANSI_RESET);
+        System.out.println("Chnaged");
     }
 
     public void insertUpdate(DocumentEvent de){
-        System.out.println(ANSI_RED+"inserted"+ANSI_RESET);
+        System.out.println("inserted");
     }
 
     public void removeUpdate(DocumentEvent de){
-        System.out.println(ANSI_RED+"Removed"+ANSI_RESET);
+        System.out.println("Removed");
     }
 
 };
