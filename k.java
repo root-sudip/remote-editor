@@ -39,6 +39,17 @@ DocumentListener gdocment = new DocumentListener(){
     }
 
 };
+
+
+KeyListener klistener = new KeyListener(){
+    public void keyPressed(KeyEvent ke){}
+    public void keyTyped(KeyEvent ke){
+        System.out.println(ke.getKeyChar());
+    }
+    public void keyReleased(KeyEvent ke){}
+
+
+};
     
     textArea.getDocument().addDocumentListener(gdocment);
     textArea.setLineWrap(false);
