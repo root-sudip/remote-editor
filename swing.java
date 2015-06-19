@@ -111,7 +111,7 @@ public class swing{
         return text;
       }
       @Override
-      public void changedUpdate(DocumentEvent de) {
+      public void CShangedUpdate(DocumentEvent de) {
         lines.setText(etText());
       }
  
