@@ -41,7 +41,7 @@ DocumentListener gdocment = new DocumentListener(){
     public void insertUpdate(DocumentEvent de){
         int countLine = textArea.getLineCount();
         System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
-        String text=" 1"+System.getProperty("line.separator");
+        String text="1"+System.getProperty("line.separator");
         int i;
         for (i=2;i<=countLine;i++){
         text +=i+System.getProperty("line.separator");
@@ -50,7 +50,16 @@ DocumentListener gdocment = new DocumentListener(){
     }
 
     public void removeUpdate(DocumentEvent de){
-        System.out.println("\033[31;1m Removed\033[0m");
+
+        int countLine = textArea.getLineCount();
+        System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
+        String text=" 1"+System.getProperty("line.separator");
+        int i;
+        for (i=2;i<=countLine-1;i++){
+        text +=" "+i+System.getProperty("line.separator");
+        lines.setText(text);
+    }
+        
     }
 
 };
