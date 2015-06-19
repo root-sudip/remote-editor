@@ -23,7 +23,7 @@ frame.setResizable(false);
 //TEXT AREA
 final JTextArea textArea = new JTextArea();
 textArea.setSize(400,400);   
-JTextArea lines = new JTextArea(" 1"); 
+final JTextArea lines = new JTextArea(" 1"); 
 JScrollPane scroll = new JScrollPane (textArea);
 Font sfont = new Font("Verdana",Font.PLAIN,16);
 JMenuBar menubar = new JMenuBar();
@@ -41,6 +41,12 @@ DocumentListener gdocment = new DocumentListener(){
     public void insertUpdate(DocumentEvent de){
         int countLine = textArea.getLineCount();
         System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
+        String text=" 1"+System.getProperty("line.separator");
+        int i;
+        for (i=2;i<=countLine;i++){
+        text +=i+System.getProperty("line.separator");
+        lines.setText(text);
+    }
     }
 
     public void removeUpdate(DocumentEvent de){
