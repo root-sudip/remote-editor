@@ -100,7 +100,7 @@ public class swing{
 
     /////////////////////////////////////////////////
 
-      textarea.addDocumentListener(new DocumentListener(){
+      textarea.getDocument().addDocumentListener(new DocumentListener(){
       public String getText(){
         int caretPosition = textarea.getDocument().getLength();
         Element root = textarea.getDocument().getDefaultRootElement();
