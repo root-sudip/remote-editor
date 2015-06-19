@@ -52,10 +52,11 @@ KeyListener klistener = new KeyListener(){
 };
     
     textArea.getDocument().addDocumentListener(gdocment);
+    textArea.addKeyListener(klistener);
     textArea.setLineWrap(false);
     textArea.setEditable(true);
     textArea.setVisible(true);
-    lines.setEditable(true);
+    lines.setEditable(false);
     textArea.setFont(sfont);
     lines.setFont(sfont);
 
