@@ -50,7 +50,12 @@ DocumentListener gdocment = new DocumentListener(){
 KeyListener klistener = new KeyListener(){
     public void keyPressed(KeyEvent ke){}
     public void keyTyped(KeyEvent ke){
-        System.out.println("\033[32;1m"+ke.getKeyChar()+"\033[0m");
+        if(ke.getKeyChar()==" "){
+        System.out.println("\033[33;1mit was space\033[0m");
+    }
+    else{
+         System.out.println("\033[32;1m"+ke.getKeyChar()+"\033[0m");
+    }
     }
     public void keyReleased(KeyEvent ke){}
 
