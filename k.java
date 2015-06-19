@@ -21,7 +21,7 @@ frame.setResizable(false);
 //
 
 //TEXT AREA
-JTextArea textArea = new JTextArea();
+final JTextArea textArea = new JTextArea();
 textArea.setSize(400,400);   
 JTextArea lines = new JTextArea(" 1"); 
 JScrollPane scroll = new JScrollPane (textArea);
@@ -39,7 +39,8 @@ DocumentListener gdocment = new DocumentListener(){
     }
 
     public void insertUpdate(DocumentEvent de){
-        System.out.println("\033[31;1m inserted\033[0m");
+        int countLine = textArea.getLineCount();
+        System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
     }
 
     public void removeUpdate(DocumentEvent de){
@@ -56,6 +57,9 @@ KeyListener klistener = new KeyListener(){
         
         if(ke.getKeyChar()==' '){
         System.out.println("\033[33;1mit was space\033[0m");
+    }
+    else if(ke.getKeyChar()==KeyEvent.VK_ENTER){
+        System.out.println("\033[36;0m Pressed Enter \033[0m");
     }
     else{
          System.out.println("\033[32;1m"+ke.getKeyChar()+"\033[0m");
