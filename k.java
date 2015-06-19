@@ -52,9 +52,9 @@ DocumentListener gdocment = new DocumentListener(){
 KeyListener klistener = new KeyListener(){
     public void keyPressed(KeyEvent ke){}
     public void keyTyped(KeyEvent ke){
-        char k = ke.getKeyChar();
         
-        if(k==' '){
+        
+        if(ke.getKeyChar()==' '){
         System.out.println("\033[33;1mit was space\033[0m");
     }
     else{
