@@ -22,6 +22,7 @@ frame.setResizable(false);
 JTextArea textArea = new JTextArea();
 textArea.setSize(400,400);   
 JTextArea lines = new JTextArea(" 1"); 
+JScrollPane scroll = new JScrollPane (textArea);
 Font sfont = new Font("Verdana",Font.PLAIN,16);
 JMenuBar menubar = new JMenuBar();
 JMenu file = new JMenu("File");
@@ -65,7 +66,14 @@ KeyListener klistener = new KeyListener(){
     textArea.setFont(sfont);
     lines.setFont(sfont);
 
-    JScrollPane scroll = new JScrollPane (textArea);
+    frame.setJMenuBar(menubar);
+    menubar.add(file);
+    file.add(open);
+    file.add(save);
+    file.add(exit);
+
+
+    
     scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
