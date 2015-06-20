@@ -42,6 +42,7 @@ DocumentListener gdocment = new DocumentListener(){
 ///start
         int countLine = textArea.getLineCount();
         System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
+        System.out.println(de.getOffset());
         String text="1"+System.getProperty("line.separator");
         int i;
         for (i=2;i<=countLine;i++){
