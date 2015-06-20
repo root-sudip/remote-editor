@@ -18,9 +18,9 @@ public class k{
 JFrame frame = new JFrame ("Test");
 frame.setSize(500,500);
 frame.setResizable(false);
-//
 
-//TEXT AREA
+
+
 final JTextArea textArea = new JTextArea();
 textArea.setSize(400,400);   
 final JTextArea lines = new JTextArea(" 1"); 
@@ -39,6 +39,7 @@ DocumentListener gdocment = new DocumentListener(){
     }
 
     public void insertUpdate(DocumentEvent de){
+///start
         int countLine = textArea.getLineCount();
         System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
         String text="1"+System.getProperty("line.separator");
@@ -46,11 +47,13 @@ DocumentListener gdocment = new DocumentListener(){
         for (i=2;i<=countLine;i++){
         text +=i+System.getProperty("line.separator");
         lines.setText(text);
+
     }
+///end
     }
 
     public void removeUpdate(DocumentEvent de){
-
+///start
         int countLine = textArea.getLineCount();
         System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
         String text=" 1"+System.getProperty("line.separator");
@@ -59,7 +62,7 @@ DocumentListener gdocment = new DocumentListener(){
         text +=" "+i+System.getProperty("line.separator");
         lines.setText(text);
     }
-        
+///end    
     }
 
 };
