@@ -25,19 +25,7 @@ JFrame frame = new JFrame ("Test");
 frame.setSize(500,500);
 frame.setResizable(false);
 
-CaretListener ctlistener = new CaretListener(){
-    public void caretUpdate(CaretEvent cl){
-        Highlighter highlight = cl.getHighlighter();
-        highlight.removeAllHighlights();
-        String patern = "Hello";
-        String text = textArea.getText();
-        int index = text.indexOf(patern);
-        while(index>=0)
-        {
-            
-        }
-    }
-};
+
 
 
 final JTextArea textArea = new JTextArea();
@@ -54,7 +42,23 @@ JMenuItem exit = new JMenuItem("Exit");
 
 
 
-
+CaretListener ctlistener = new CaretListener(){
+    public void caretUpdate(CaretEvent cl){
+        Highlighter highlight = textArea.getHighlighter();
+        highlight.removeAllHighlights();
+        String patern = "Hello";
+        String text = textArea.getText();
+        int index = text.indexOf(patern);
+        while(index>=0)
+        {
+            try{
+                    highlight.addHighlight(index,index+patern.length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
+                    index = text.indexOf(patern,index+patern.length());
+        }
+        catch(BadLocationException ex){}
+        }
+    }
+};
 
 
 
@@ -115,7 +119,7 @@ KeyListener klistener = new KeyListener(){
 
 
 };
-    
+    textArea.addCaretListener(ctlistener );
     textArea.getDocument().addDocumentListener(gdocment);
     textArea.addKeyListener(klistener);
     textArea.setLineWrap(false);
