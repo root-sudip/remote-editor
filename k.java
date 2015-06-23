@@ -24,8 +24,10 @@ frame.setSize(500,500);
 frame.setResizable(false);
 
 CaretListener ctlistener = new CaretListener(){
-    
-}
+    public void caretUpdate(CaretEvent cl){
+        
+    }
+};
 
 
 final JTextArea textArea = new JTextArea();
