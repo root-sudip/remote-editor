@@ -41,6 +41,10 @@ JMenuItem save = new JMenuItem("Save");
 JMenuItem exit = new JMenuItem("Exit");
 
 
+File file = new File("read");
+FileReader fileReader = new FileReader(file);
+BufferedReader bufferedReader = new BufferedReader(fileReader);
+
 
 CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
