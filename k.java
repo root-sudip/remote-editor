@@ -22,6 +22,13 @@ public class k{
 FileReader fileReader = new FileReader(file);
 BufferedReader bufferedReader = new BufferedReader(fileReader);
 */
+
+
+try {
+        File file = new File("read");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
     Runnable runner =new Runnable()
     {
       public void run(){
@@ -52,30 +59,24 @@ CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
         Highlighter highlight = textArea.getHighlighter();
         highlight.removeAllHighlights();
-        String patern = "Hello";
+//////////////////////
+        /*String[] patern = new String[2];*/
+        int i;
+        /*patern[0]="Hello";
+        patern[1]="world";*/
+        
         String text = textArea.getText();
-        int index = text.indexOf(patern);
+        for (i=0;i<=1;i++){
+        int index = text.indexOf(patern[i]);
         while(index>=0)
         {
             try{
-                    highlight.addHighlight(index,index+patern.length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
-                    index = text.indexOf(patern,index+patern.length());
+                    highlight.addHighlight(index,index+patern[i].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
+                    index = text.indexOf(patern[i],index+patern[i].length());
         }
         catch(BadLocationException ex){}
         }
-
-        String patern1 = "world";
-        String text1 = textArea.getText();
-        int index1 = text1.indexOf(patern);
-        while(index1>=0)
-        {
-            try{
-                    highlight.addHighlight(index1,index1+patern1.length(),new DefaultHighlighter.DefaultHighlightPainter(Color.blue));
-                    index1 = text1.indexOf(patern1,index1+patern.length());
-        }
-        catch(BadLocationException ex){}
-        }
-
+    }
     }
 };
 
@@ -171,5 +172,7 @@ KeyListener klistener = new KeyListener(){
 
 };
 runner.run();
+}
+catch(IOException e){}
 }
 }
