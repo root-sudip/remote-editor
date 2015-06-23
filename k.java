@@ -165,7 +165,7 @@ String[] patern_3 = new String[2];
         while(index_4>=0)
         {
             try{
-                    highlight.addHighlight(index_4,index_4+patern_4[i_4].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.gray));
+                    highlight.addHighlight(index_4,index_4+patern_4[i_4].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.cyan));
                     index_4 = text_4.indexOf(patern_4[i_4],index_4+patern_4[i_4].length());
         }
         catch(BadLocationException ex){}
