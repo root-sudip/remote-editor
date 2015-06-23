@@ -85,8 +85,19 @@ CaretListener ctlistener = new CaretListener(){
     }////method end
 
 
+/* String patternn = "<aa>";
+                    String textn = textArea.getText();        
+                    int indexn = textn.indexOf(patternn);
+                    while(indexn >= 0){
+                        try {                
+                            Object o = highlight.addHighlight(indexn, indexn + patternn.length(), new DefaultHighlighter.DefaultHighlightPainter(Color.yellow));
+                            indexn = textn.indexOf(patternn, indexn + patternn.length());
+                        } catch (BadLocationException ex) {
+                            ex.printStackTrace();
+                        }
+                    }*/
 
-
+        
 
     String[] patern_1 = new String[4];
     patern_1[0]="for";
@@ -98,12 +109,12 @@ CaretListener ctlistener = new CaretListener(){
         
         String text_1 = textArea.getText();
         for (i_1=0;i_1<=3;i_1++){
-        int index_1 = text_1.indexOf(patern[i_1]);
+        int index_1 = text_1.indexOf(patern_1[i_1]);
         while(index_1>=0)
         {
             try{
-                    highlight.addHighlight(index_1,index_1+patern_1[i].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
-                    index_1 = text_1.indexOf(patern_1[i],index_1+patern_1[i].length());
+                    highlight.addHighlight(index_1,index_1+patern_1[i_1].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
+                    index_1 = text_1.indexOf(patern_1[i_1],index_1+patern_1[i_1].length());
         }
         catch(BadLocationException ex){}
         }    
