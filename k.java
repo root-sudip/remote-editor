@@ -75,7 +75,7 @@ DocumentListener gdocment = new DocumentListener(){
         text +=" "+i+System.getProperty("line.separator");
         lines.setText(text);
     }
-///end    
+///end
     }
 
 };
