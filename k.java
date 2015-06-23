@@ -126,7 +126,7 @@ CaretListener ctlistener = new CaretListener(){
         while(index_2>=0)
         {
             try{
-                    highlight.addHighlight(index_2,index_2+patern_2[i_2].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.blue));
+                    highlight.addHighlight(index_2,index_2+patern_2[i_2].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.magenta));
                     index_2 = text_2.indexOf(patern_2[i_2],index_2+patern_2[i_2].length());
         }
         catch(BadLocationException ex){}
@@ -148,7 +148,7 @@ String[] patern_3 = new String[2];
         while(index_3>=0)
         {
             try{
-                    highlight.addHighlight(index_3,index_3+patern_3[i_3].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.magenta));
+                    highlight.addHighlight(index_3,index_3+patern_3[i_3].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.blue));
                     index_3 = text_3.indexOf(patern_3[i_3],index_3+patern_3[i_3].length());
         }
         catch(BadLocationException ex){}
