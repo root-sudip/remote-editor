@@ -173,10 +173,6 @@ String[] patern_3 = new String[2];
     }////end loop
 
 
-
-
-
-
 /*
         char patern4 ='"';
         
