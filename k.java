@@ -12,6 +12,8 @@ import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
+import javax.swing.text.BadLocationException;
+
 
 public class k{
   public static void main(String[] args) {
@@ -25,7 +27,7 @@ frame.setResizable(false);
 
 CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
-        
+        Highlighter highlight = cl.getHighlighter();
     }
 };
 
