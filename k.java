@@ -24,7 +24,7 @@ public class k{
 
 JFrame frame = new JFrame ("Test");
 frame.setSize(500,500);
-frame.setResizable(false);
+frame.setResizable(true);
 
 
 
@@ -84,21 +84,6 @@ CaretListener ctlistener = new CaretListener(){
         }  
     }////method end
 
-
-/* String patternn = "<aa>";
-                    String textn = textArea.getText();        
-                    int indexn = textn.indexOf(patternn);
-                    while(indexn >= 0){
-                        try {                
-                            Object o = highlight.addHighlight(indexn, indexn + patternn.length(), new DefaultHighlighter.DefaultHighlightPainter(Color.yellow));
-                            indexn = textn.indexOf(patternn, indexn + patternn.length());
-                        } catch (BadLocationException ex) {
-                            ex.printStackTrace();
-                        }
-                    }*/
-
-        
-
     String[] patern_1 = new String[4];
     patern_1[0]="for";
     patern_1[1]="while";
@@ -120,9 +105,55 @@ CaretListener ctlistener = new CaretListener(){
         }    
     }////end loop
 
+ String[] patern_2 = new String[10];
+    patern_2[0]="0";
+    patern_2[1]="1";
+    patern_2[2]="2";
+    patern_2[3]="3";
+    patern_2[4]="4";
+    patern_2[5]="5";
+    patern_2[6]="6";
+    patern_2[7]="7";
+    patern_2[8]="8";
+    patern_2[9]="9";
+
+        int i_2;
+       
+        
+        String text_2 = textArea.getText();
+        for (i_2=0;i_2<=9;i_2++){
+        int index_2 = text_2.indexOf(patern_2[i_2]);
+        while(index_2>=0)
+        {
+            try{
+                    highlight.addHighlight(index_2,index_2+patern_2[i_2].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.blue));
+                    index_2 = text_2.indexOf(patern_2[i_2],index_2+patern_2[i_2].length());
+        }
+        catch(BadLocationException ex){}
+        }    
+    }////end int
 
 
+String[] patern_3 = new String[2];
+    patern_3[0]="true";
+    patern_3[1]="false";
+    
 
+        int i_3;
+       
+        
+        String text_3 = textArea.getText();
+        for (i_3=0;i_3<=1;i_3++){
+        int index_3 = text_2.indexOf(patern_3[i_3]);
+        while(index_3>=0)
+        {
+            try{
+                    highlight.addHighlight(index_3,index_3+patern_3[i_3].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.magenta));
+                    index_3 = text_3.indexOf(patern_3[i_3],index_3+patern_3[i_3].length());
+        }
+        catch(BadLocationException ex){}
+        }    
+    }////end bool
 
 
 
