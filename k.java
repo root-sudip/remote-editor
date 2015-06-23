@@ -81,35 +81,36 @@ CaretListener ctlistener = new CaretListener(){
                     index = text.indexOf(patern[i],index+patern[i].length());
         }
         catch(BadLocationException ex){}
-        }
-
-
-       
+        }  
     }////method end
 
 
 
 
 
-    String[] patern_1 = new String[19];
+    String[] patern_1 = new String[4];
+    patern_1[0]="for";
+    patern_1[1]="while";
+    patern_1[2]="do";
+    pater_1[3]="return"
         int i_1;
        
         
         String text_1 = textArea.getText();
-        for (i_1=0;i_1<=18;i_1++){
+        for (i_1=0;i_1<=3;i_1++){
         int index_1 = text_1.indexOf(patern[i_1]);
         while(index_1>=0)
         {
             try{
-                    highlight.addHighlight(index_1,index_1+patern_1[i].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.green));
+                    highlight.addHighlight(index_1,index_1+patern_1[i].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
                     index_1 = text_1.indexOf(patern_1[i],index_1+patern_1[i].length());
         }
         catch(BadLocationException ex){}
-        }
+        }    
+    }////end loop
 
 
-       
-    }
+
 
 
 
