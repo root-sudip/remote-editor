@@ -92,7 +92,7 @@ CaretListener ctlistener = new CaretListener(){
     patern_1[0]="for";
     patern_1[1]="while";
     patern_1[2]="do";
-    pater_1[3]="return";
+    patern_1[3]="return";
         int i_1;
        
         
