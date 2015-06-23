@@ -9,6 +9,7 @@ import javax.swing.JScrollPane;
 import java.util.*;
 import java.io.*;
 
+
 public class k{
   public static void main(String[] args) {
     Runnable runner =new Runnable()
@@ -25,8 +26,8 @@ final JTextArea textArea = new JTextArea();
 textArea.setSize(400,400);   
 final JTextArea lines = new JTextArea(" 1"); 
 JScrollPane scroll = new JScrollPane (textArea);
-Font sfont = new Font("Verdana",Font.PLAIN,16);
-Font ssfont = new Font("Verdana",Font.PLAIN,20);
+final Font sfont = new Font("Verdana",Font.PLAIN,16);
+final Font ssfont = new Font("Verdana",Font.PLAIN,20);
 JMenuBar menubar = new JMenuBar();
 JMenu file = new JMenu("File");
 JMenuItem open = new JMenuItem("Open");
@@ -41,20 +42,17 @@ DocumentListener gdocment = new DocumentListener(){
 
     public void insertUpdate(DocumentEvent de){
 ///start***
-        int prvpos=0,currpos;
+        
         int countLine = textArea.getLineCount();
-        String stringr=textArea.getText();
-        currpos=de.getOffset();
-        if(stringr.charAt(currpos)==' '){
-            prvpos=currpos;
-            prvpos+=1;
-            System.out.println("\033[32;1m previous"+prvpos+"\033[0m");
-            
-        }
-        else{
+    
+
+        
+
+        
+       
         
         System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
-    }
+    
         System.out.println(de.getOffset());
         String text="1"+System.getProperty("line.separator");
         int i;
