@@ -28,6 +28,14 @@ frame.setResizable(false);
 CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
         Highlighter highlight = cl.getHighlighter();
+        highlight.removeAllHighlights();
+        String patern = "Hello";
+        String text = textArea.getText();
+        int index = text.indexOf(patern);
+        while(index>=0)
+        {
+            
+        }
     }
 };
 
