@@ -8,7 +8,10 @@ import javax.swing.JPanel.*;
 import javax.swing.JScrollPane;
 import java.util.*;
 import java.io.*;
-
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.Highlighter;
 
 public class k{
   public static void main(String[] args) {
@@ -34,6 +37,13 @@ JMenuItem open = new JMenuItem("Open");
 JMenuItem save = new JMenuItem("Save");
 JMenuItem exit = new JMenuItem("Exit");
 
+
+
+
+
+
+
+
 DocumentListener gdocment = new DocumentListener(){
 
     public void changedUpdate(DocumentEvent de){
@@ -44,15 +54,7 @@ DocumentListener gdocment = new DocumentListener(){
 ///start***
         
         int countLine = textArea.getLineCount();
-    
-
-        
-
-        
-       
-        
         System.out.println("\033[31;1m inserted and lines="+countLine+"\033[0m");
-    
         System.out.println(de.getOffset());
         String text="1"+System.getProperty("line.separator");
         int i;
@@ -60,8 +62,6 @@ DocumentListener gdocment = new DocumentListener(){
         text +=i+System.getProperty("line.separator");
         lines.setText(text);
     }
-
-    
 ///end
     }
 
@@ -75,7 +75,7 @@ DocumentListener gdocment = new DocumentListener(){
         text +=" "+i+System.getProperty("line.separator");
         lines.setText(text);
     }
-///end
+///en 
     }
 
 };
