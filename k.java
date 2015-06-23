@@ -18,17 +18,6 @@ import javax.swing.text.BadLocationException;
 public class k{
   public static void main(String[] args) {
 
-/*File file = new File("read");
-FileReader fileReader = new FileReader(file);
-BufferedReader bufferedReader = new BufferedReader(fileReader);
-*/
-
-
-try {
-        File file = new File("read");
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
     Runnable runner =new Runnable()
     {
       public void run(){
@@ -59,24 +48,73 @@ CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
         Highlighter highlight = textArea.getHighlighter();
         highlight.removeAllHighlights();
-//////////////////////
-        /*String[] patern = new String[2];*/
+////////////function//////////
+        String[] patern = new String[19];
         int i;
-        /*patern[0]="Hello";
-        patern[1]="world";*/
+        patern[0]="main";
+        patern[1]="printf";
+        patern[2]="scanf";
+        patern[3]="strcmp";
+        patern[4]="strlen";
+        patern[5]="strcpy";
+        patern[6]="strncpy";
+        patern[7]="strcat";
+        patern[8]="strncmp";
+        patern[9]="strcmpi";
+        patern[10]="strncpi";
+        patern[11]="int";
+        patern[12]="double";
+        patern[13]="float";
+        patern[14]="unsigned";
+        patern[15]="signed";
+        patern[16]="char";
+        patern[17]="strlwr";
+        patern[18]="strupr";
         
         String text = textArea.getText();
-        for (i=0;i<=1;i++){
+        for (i=0;i<=18;i++){
         int index = text.indexOf(patern[i]);
         while(index>=0)
         {
             try{
-                    highlight.addHighlight(index,index+patern[i].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
+                    highlight.addHighlight(index,index+patern[i].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.green));
                     index = text.indexOf(patern[i],index+patern[i].length());
         }
         catch(BadLocationException ex){}
         }
+
+
+       
+    }////method end
+
+
+
+
+
+    String[] patern_1 = new String[19];
+        int i_1;
+       
+        
+        String text_1 = textArea.getText();
+        for (i_1=0;i_1<=18;i_1++){
+        int index_1 = text_1.indexOf(patern[i_1]);
+        while(index_1>=0)
+        {
+            try{
+                    highlight.addHighlight(index_1,index_1+patern_1[i].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.green));
+                    index_1 = text_1.indexOf(patern_1[i],index_1+patern_1[i].length());
+        }
+        catch(BadLocationException ex){}
+        }
+
+
+       
     }
+
+
+
+
+////caretlistener
     }
 };
 
@@ -172,7 +210,6 @@ KeyListener klistener = new KeyListener(){
 
 };
 runner.run();
-}
-catch(IOException e){}
+
 }
 }
