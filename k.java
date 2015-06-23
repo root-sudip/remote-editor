@@ -49,7 +49,7 @@ CaretListener ctlistener = new CaretListener(){
         Highlighter highlight = textArea.getHighlighter();
         highlight.removeAllHighlights();
 ////////////function//////////
-        String[] patern = new String[19];
+        String[] patern = new String[13];
         int i;
         patern[0]="main";
         patern[1]="printf";
@@ -62,17 +62,11 @@ CaretListener ctlistener = new CaretListener(){
         patern[8]="strncmp";
         patern[9]="strcmpi";
         patern[10]="strncpi";
-        patern[11]="int";
-        patern[12]="double";
-        patern[13]="float";
-        patern[14]="unsigned";
-        patern[15]="signed";
-        patern[16]="char";
-        patern[17]="strlwr";
-        patern[18]="strupr";
+        patern[11]="strlwr";
+        patern[12]="strupr";
         
         String text = textArea.getText();
-        for (i=0;i<=18;i++){
+        for (i=0;i<=12;i++){
         int index = text.indexOf(patern[i]);
         while(index>=0)
         {
@@ -84,21 +78,22 @@ CaretListener ctlistener = new CaretListener(){
         }  
     }////method end
 
-    String[] patern_1 = new String[4];
+    String[] patern_1 = new String[5];
     patern_1[0]="for";
     patern_1[1]="while";
     patern_1[2]="do";
     patern_1[3]="return";
+    patern_1[4]="include";
         int i_1;
        
         
         String text_1 = textArea.getText();
-        for (i_1=0;i_1<=3;i_1++){
+        for (i_1=0;i_1<=4;i_1++){
         int index_1 = text_1.indexOf(patern_1[i_1]);
         while(index_1>=0)
         {
             try{
-                    highlight.addHighlight(index_1,index_1+patern_1[i_1].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.red));
+                    highlight.addHighlight(index_1,index_1+patern_1[i_1].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.gray));
                     index_1 = text_1.indexOf(patern_1[i_1],index_1+patern_1[i_1].length());
         }
         catch(BadLocationException ex){}
@@ -137,11 +132,8 @@ CaretListener ctlistener = new CaretListener(){
 String[] patern_3 = new String[2];
     patern_3[0]="true";
     patern_3[1]="false";
-    
-
         int i_3;
        
-        
         String text_3 = textArea.getText();
         for (i_3=0;i_3<=1;i_3++){
         int index_3 = text_2.indexOf(patern_3[i_3]);
@@ -154,6 +146,51 @@ String[] patern_3 = new String[2];
         catch(BadLocationException ex){}
         }    
     }////end bool
+
+
+
+
+    String[] patern_4 = new String[6];
+      patern_4[0]="int";
+      patern_4[1]="double";
+      patern_4[2]="float";
+      patern_4[3]="unsigned";
+      patern_4[4]="signed";
+      patern_4[5]="char";
+        int i_4;
+       
+        String text_4 = textArea.getText();
+        for (i_4=0;i_4<=5;i_4++){
+        int index_4 = text_4.indexOf(patern_4[i_4]);
+        while(index_4>=0)
+        {
+            try{
+                    highlight.addHighlight(index_4,index_4+patern_4[i_4].length(),new DefaultHighlighter.DefaultHighlightPainter(Color.gray));
+                    index_4 = text_4.indexOf(patern_4[i_4],index_4+patern_4[i_4].length());
+        }
+        catch(BadLocationException ex){}
+        }    
+    }////end loop
+
+
+
+
+
+
+/*
+        char patern4 ='"';
+        
+        String text_4 = textArea.getText();
+        
+        int index_4 = text_4.indexOf(patern_4);
+        while(index_4>=0)
+        {
+            try{
+                    highlight.addHighlight(index_4,index_4+patern_4.length(),new DefaultHighlighter.DefaultHighlightPainter(Color.blue));
+                    index_4 = text_4.indexOf(patern_3,index_3+patern_3.length());
+        }
+        catch(BadLocationException ex){}
+        } */   //string highlis
 
 
 
@@ -226,6 +263,7 @@ KeyListener klistener = new KeyListener(){
     textArea.setLineWrap(false);
     textArea.setEditable(true);
     textArea.setVisible(true);
+    textArea.setTabSize(4);
     lines.setEditable(false);
     textArea.setFont(sfont);
     lines.setFont(sfont);
