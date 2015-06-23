@@ -17,6 +17,11 @@ import javax.swing.text.BadLocationException;
 
 public class k{
   public static void main(String[] args) {
+
+File file = new File("read");
+FileReader fileReader = new FileReader(file);
+BufferedReader bufferedReader = new BufferedReader(fileReader);
+
     Runnable runner =new Runnable()
     {
       public void run(){
@@ -50,7 +55,7 @@ CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
         Highlighter highlight = textArea.getHighlighter();
         highlight.removeAllHighlights();
-        String patern = "Hello";
+        /*String patern = "Hello";*/
         String text = textArea.getText();
         int index = text.indexOf(patern);
         while(index>=0)
