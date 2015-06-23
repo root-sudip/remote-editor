@@ -18,10 +18,10 @@ import javax.swing.text.BadLocationException;
 public class k{
   public static void main(String[] args) {
 
-File file = new File("read");
+/*File file = new File("read");
 FileReader fileReader = new FileReader(file);
 BufferedReader bufferedReader = new BufferedReader(fileReader);
-
+*/
     Runnable runner =new Runnable()
     {
       public void run(){
@@ -46,16 +46,13 @@ JMenuItem save = new JMenuItem("Save");
 JMenuItem exit = new JMenuItem("Exit");
 
 
-File file = new File("read");
-FileReader fileReader = new FileReader(file);
-BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 
 CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
         Highlighter highlight = textArea.getHighlighter();
         highlight.removeAllHighlights();
-        /*String patern = "Hello";*/
+        String patern = "Hello";
         String text = textArea.getText();
         int index = text.indexOf(patern);
         while(index>=0)
@@ -66,6 +63,19 @@ CaretListener ctlistener = new CaretListener(){
         }
         catch(BadLocationException ex){}
         }
+
+        String patern1 = "world";
+        String text1 = textArea.getText();
+        int index1 = text1.indexOf(patern);
+        while(index1>=0)
+        {
+            try{
+                    highlight.addHighlight(index1,index1+patern1.length(),new DefaultHighlighter.DefaultHighlightPainter(Color.blue));
+                    index1 = text1.indexOf(patern1,index1+patern.length());
+        }
+        catch(BadLocationException ex){}
+        }
+
     }
 };
 
