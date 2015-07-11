@@ -13,7 +13,6 @@ import javax.swing.event.CaretListener;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 import javax.swing.text.BadLocationException;
-c
 
 
 public class k{
