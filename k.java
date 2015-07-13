@@ -14,7 +14,7 @@ import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 import javax.swing.text.BadLocationException;
 
-sd
+
 
 public class k{
   public static void main(String[] args) {
