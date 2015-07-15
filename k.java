@@ -41,7 +41,7 @@ JMenuItem save = new JMenuItem("Save");
 JMenuItem exit = new JMenuItem("Exit");
 
 
-as
+asd
 CaretListener ctlistener = new CaretListener(){
     public void caretUpdate(CaretEvent cl){
         Highlighter highlight = textArea.getHighlighter();
